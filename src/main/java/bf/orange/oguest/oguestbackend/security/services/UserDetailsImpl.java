@@ -1,6 +1,6 @@
 package bf.orange.oguest.oguestbackend.security.services;
 
-import bf.orange.oguest.oguestbackend.dao.entity.User;
+import bf.orange.oguest.oguestbackend.dao.entity.auth.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;

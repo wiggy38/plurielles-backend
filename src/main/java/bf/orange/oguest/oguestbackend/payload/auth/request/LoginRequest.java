@@ -1,4 +1,4 @@
-package bf.orange.oguest.oguestbackend.payload.request;
+package bf.orange.oguest.oguestbackend.payload.auth.request;
 
 import javax.validation.constraints.NotBlank;
 

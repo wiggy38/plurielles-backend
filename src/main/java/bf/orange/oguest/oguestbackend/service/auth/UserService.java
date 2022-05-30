@@ -1,7 +1,7 @@
-package bf.orange.oguest.oguestbackend.service;
+package bf.orange.oguest.oguestbackend.service.auth;
 
-import bf.orange.oguest.oguestbackend.dao.entity.User;
-import bf.orange.oguest.oguestbackend.dao.repository.UserRepository;
+import bf.orange.oguest.oguestbackend.dao.entity.auth.User;
+import bf.orange.oguest.oguestbackend.dao.repository.auth.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
-package bf.orange.oguest.oguestbackend.controller;
+package bf.orange.oguest.oguestbackend.controller.auth;
 
-import bf.orange.oguest.oguestbackend.dao.entity.User;
-import bf.orange.oguest.oguestbackend.service.UserService;
+import bf.orange.oguest.oguestbackend.dao.entity.auth.User;
+import bf.orange.oguest.oguestbackend.service.auth.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;

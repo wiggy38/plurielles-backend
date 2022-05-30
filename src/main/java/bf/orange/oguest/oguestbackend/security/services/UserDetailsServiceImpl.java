@@ -1,7 +1,7 @@
 package bf.orange.oguest.oguestbackend.security.services;
 
-import bf.orange.oguest.oguestbackend.dao.entity.User;
-import bf.orange.oguest.oguestbackend.dao.repository.UserRepository;
+import bf.orange.oguest.oguestbackend.dao.entity.auth.User;
+import bf.orange.oguest.oguestbackend.dao.repository.auth.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

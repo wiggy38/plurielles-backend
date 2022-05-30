@@ -1,20 +1,15 @@
-package bf.orange.oguest.oguestbackend.service;
+package bf.orange.oguest.oguestbackend.service.auth;
 
-import bf.orange.oguest.oguestbackend.dao.entity.User;
-import bf.orange.oguest.oguestbackend.dao.repository.UserRepository;
-import bf.orange.oguest.oguestbackend.payload.request.LdapSignupRequest;
-import bf.orange.oguest.oguestbackend.payload.request.LoginRequest;
-import bf.orange.oguest.oguestbackend.payload.response.JwtResponse;
+import bf.orange.oguest.oguestbackend.dao.entity.auth.User;
+import bf.orange.oguest.oguestbackend.dao.repository.auth.UserRepository;
+import bf.orange.oguest.oguestbackend.payload.auth.request.LoginRequest;
+import bf.orange.oguest.oguestbackend.payload.auth.response.JwtResponse;
 import bf.orange.oguest.oguestbackend.security.jwt.JwtUtils;
-import bf.orange.oguest.oguestbackend.security.services.UserDetailsImpl;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ldap.core.LdapTemplate;
-import org.springframework.ldap.query.LdapQuery;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
@@ -25,15 +20,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.ldap.userdetails.LdapUserDetailsImpl;
 import org.springframework.stereotype.Service;
 
-import javax.naming.NamingException;
-import javax.naming.directory.Attributes;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
-import java.util.stream.Collectors;
-
-import static org.springframework.ldap.query.LdapQueryBuilder.query;
 
 @Data
 @Service

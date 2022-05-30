@@ -1,7 +1,7 @@
-package bf.orange.oguest.oguestbackend.service;
+package bf.orange.oguest.oguestbackend.service.auth;
 
-import bf.orange.oguest.oguestbackend.dao.entity.Role;
-import bf.orange.oguest.oguestbackend.dao.repository.RoleRepository;
+import bf.orange.oguest.oguestbackend.dao.entity.auth.Role;
+import bf.orange.oguest.oguestbackend.dao.repository.auth.RoleRepository;
 import bf.orange.oguest.oguestbackend.utils.ExceptionMsg;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;

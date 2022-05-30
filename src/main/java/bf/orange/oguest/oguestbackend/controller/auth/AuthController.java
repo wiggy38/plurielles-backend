@@ -1,21 +1,19 @@
-package bf.orange.oguest.oguestbackend.controller;
+package bf.orange.oguest.oguestbackend.controller.auth;
 
-import bf.orange.oguest.oguestbackend.dao.repository.RoleRepository;
-import bf.orange.oguest.oguestbackend.dao.repository.UserRepository;
-import bf.orange.oguest.oguestbackend.payload.request.LoginRequest;
-import bf.orange.oguest.oguestbackend.payload.response.JwtResponse;
+import bf.orange.oguest.oguestbackend.dao.repository.auth.RoleRepository;
+import bf.orange.oguest.oguestbackend.dao.repository.auth.UserRepository;
+import bf.orange.oguest.oguestbackend.payload.auth.request.LoginRequest;
+import bf.orange.oguest.oguestbackend.payload.auth.response.JwtResponse;
 import bf.orange.oguest.oguestbackend.security.jwt.JwtUtils;
-import bf.orange.oguest.oguestbackend.service.AuthService;
+import bf.orange.oguest.oguestbackend.service.auth.AuthService;
 import io.jsonwebtoken.impl.DefaultClaims;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;

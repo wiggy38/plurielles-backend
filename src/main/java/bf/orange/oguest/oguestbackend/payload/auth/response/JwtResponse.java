@@ -1,4 +1,4 @@
-package bf.orange.oguest.oguestbackend.payload.response;
+package bf.orange.oguest.oguestbackend.payload.auth.response;
 
 import lombok.Data;
 

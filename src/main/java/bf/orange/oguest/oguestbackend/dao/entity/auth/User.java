@@ -1,6 +1,5 @@
-package bf.orange.oguest.oguestbackend.dao.entity;
+package bf.orange.oguest.oguestbackend.dao.entity.auth;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
