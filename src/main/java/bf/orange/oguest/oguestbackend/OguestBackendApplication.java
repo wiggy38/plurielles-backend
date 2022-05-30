@@ -1,12 +1,19 @@
 package bf.orange.oguest.oguestbackend;
 
+import bf.orange.oguest.oguestbackend.logging.LoggingController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Date;
 
 @SpringBootApplication
-public class OguestBackendApplication {
+public class OguestBackendApplication implements ApplicationRunner {
+
+    Logger logger = LoggerFactory.getLogger(LoggingController.class);
 
     public static void main(String[] args) {
         SpringApplication.run(OguestBackendApplication.class, args);
@@ -19,6 +26,14 @@ public class OguestBackendApplication {
         System.out.println("---------- Welcome To O'Guest Backend Application! ---------");
         System.out.println("------------------------------------------------------------");
 
+    }
+
+    @Override
+    public void run(ApplicationArguments applicationArguments) throws Exception {
+        logger.debug("Debugging log");
+        logger.info("Info log");
+        logger.warn("Hey, This is a warning!");
+        logger.error("Oops! We have an Error. OK");
     }
 
 }
