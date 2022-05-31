@@ -23,6 +23,22 @@ public class Visits {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @Column(nullable = false)
+    private String arrival_time;
+
+    @Column(nullable = false)
+    private String departure_time;
+
+    @Column(nullable = false)
+    private String motive;
+
+    @Column(nullable = false)
+    private String comment;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Status status;
+
     @CreationTimestamp
     private Date created;
 
@@ -44,5 +60,9 @@ public class Visits {
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.MERGE)
     @JoinColumn(name = "employee_id")
     private Employee employee;
+
+    public enum Status {
+        EXPECTED, ONGOING, COMPLETED;
+    }
 
 }

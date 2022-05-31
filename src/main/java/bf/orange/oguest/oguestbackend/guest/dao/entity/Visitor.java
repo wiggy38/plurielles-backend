@@ -38,13 +38,18 @@ public class Visitor {
     @Column(nullable = false)
     private String type_piece;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String statut;
+    private Status status = Status.ALLOWED;
 
     @CreationTimestamp
     private Date created;
 
     @UpdateTimestamp
     private Date updated;
+
+    public enum Status {
+        ALLOWED, FORBIDDEN;
+    }
 
 }
