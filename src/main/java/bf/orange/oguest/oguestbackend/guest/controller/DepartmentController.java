@@ -45,7 +45,7 @@ public class DepartmentController {
         return ResponseEntity.ok().body(departmentConverter.toDtoList(savedDepartments));
     }
 
-    @PostMapping("/w/delete/departments")
+    @PostMapping("/d/delete/departments")
     public void deleteAll(@PathVariable("id") List<Long> ids) {
         departmentBusiness.deleteAll(ids);
     }

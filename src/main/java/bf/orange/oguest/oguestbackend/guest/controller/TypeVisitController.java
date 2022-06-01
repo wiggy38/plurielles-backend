@@ -45,7 +45,7 @@ public class TypeVisitController {
         return ResponseEntity.ok().body(typeVisitConverter.toDtoList(savedTypeVisits));
     }
 
-    @PostMapping("/w/delete/typeVisits")
+    @PostMapping("/d/delete/typeVisits")
     public void deleteAll(@PathVariable("id") List<Long> ids) {
         typeVisitBusiness.deleteAll(ids);
     }

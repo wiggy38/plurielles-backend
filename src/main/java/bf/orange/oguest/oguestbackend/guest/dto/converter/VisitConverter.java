@@ -4,18 +4,18 @@ import bf.orange.oguest.oguestbackend.guest.dao.entity.Visit;
 import bf.orange.oguest.oguestbackend.guest.dao.repository.VisitRepository;
 import bf.orange.oguest.oguestbackend.guest.dto.VisitDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class VisitConverter {
 
     @Autowired
     VisitRepository visitRepository;
     @Autowired
     BadgeConverter badgeConverter;
-    @Autowired
-    VisitConverter visitConverter;
     @Autowired
     VisitorConverter visitorConverter;
     @Autowired

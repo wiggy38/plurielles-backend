@@ -47,7 +47,7 @@ public class LocationController {
         return ResponseEntity.ok().body(locationConverter.toDtoList(savedLocations));
     }
 
-    @PostMapping("/w/delete/locations")
+    @PostMapping("/d/delete/locations")
     public void deleteAll(@PathVariable("id") List<Long> ids) {
         locationBusiness.deleteAll(ids);
     }

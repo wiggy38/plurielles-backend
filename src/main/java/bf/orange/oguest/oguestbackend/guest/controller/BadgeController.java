@@ -45,7 +45,7 @@ public class BadgeController {
         return ResponseEntity.ok().body(badgeConverter.toDtoList(savedBadges));
     }
 
-    @PostMapping("/w/delete/badges")
+    @PostMapping("/d/delete/badges")
     public void deleteAll(@PathVariable("id") List<Long> ids) {
         badgeBusiness.deleteAll(ids);
     }
