@@ -37,7 +37,7 @@ public class TypeVisitConverter {
         return typeVisit;
     }
 
-    public List<TypeVisit> toList(List<TypeVisitDto> TypeVisitDtos) {
+    public List<TypeVisit> fromDtoList(List<TypeVisitDto> TypeVisitDtos) {
         List<TypeVisit> TypeVisits = new ArrayList<>();
         for (TypeVisitDto TypeVisitDto:TypeVisitDtos) {
             TypeVisits.add(this.fromDto(TypeVisitDto));

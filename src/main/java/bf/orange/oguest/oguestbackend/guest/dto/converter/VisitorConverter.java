@@ -4,10 +4,12 @@ import bf.orange.oguest.oguestbackend.guest.dao.entity.Visitor;
 import bf.orange.oguest.oguestbackend.guest.dao.repository.VisitorRepository;
 import bf.orange.oguest.oguestbackend.guest.dto.VisitorDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class VisitorConverter {
 
     @Autowired
@@ -45,7 +47,7 @@ public class VisitorConverter {
         return visitor;
     }
 
-    public List<Visitor> toList(List<VisitorDto> VisitorDtos) {
+    public List<Visitor> fromDtoList(List<VisitorDto> VisitorDtos) {
         List<Visitor> Visitors = new ArrayList<>();
         for (VisitorDto VisitorDto:VisitorDtos) {
             Visitors.add(this.fromDto(VisitorDto));

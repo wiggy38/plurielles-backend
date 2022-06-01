@@ -41,7 +41,7 @@ public class BadgeConverter {
         return badge;
     }
 
-    public List<Badge> toList(List<BadgeDto> badgeDtos) {
+    public List<Badge> fromDtoList(List<BadgeDto> badgeDtos) {
         List<Badge> badges = new ArrayList<>();
         for (BadgeDto badgeDto:badgeDtos) {
             badges.add(this.fromDto(badgeDto));

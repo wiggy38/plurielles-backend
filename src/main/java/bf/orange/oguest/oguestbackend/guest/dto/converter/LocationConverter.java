@@ -39,7 +39,7 @@ public class LocationConverter {
         return location;
     }
 
-    public List<Location> toList(List<LocationDto> LocationDtos) {
+    public List<Location> fromDtoList(List<LocationDto> LocationDtos) {
         List<Location> Locations = new ArrayList<>();
         for (LocationDto LocationDto:LocationDtos) {
             Locations.add(this.fromDto(LocationDto));

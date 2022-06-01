@@ -35,6 +35,8 @@ public class Employee {
 
     private String phone;
 
+    private Boolean deleted = false;
+
     @CreationTimestamp
     private Date created;
 

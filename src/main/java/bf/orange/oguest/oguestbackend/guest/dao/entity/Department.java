@@ -25,6 +25,8 @@ public class Department {
     @Column(nullable = false, unique = true)
     private String libelle;
 
+    private Boolean deleted = false;
+
     @CreationTimestamp
     private Date created;
 

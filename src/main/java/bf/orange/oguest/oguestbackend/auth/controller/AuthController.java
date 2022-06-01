@@ -22,7 +22,7 @@ import java.util.Map.Entry;
 
 @CrossOrigin(origins = "http://localhost:8080", maxAge = 3600)
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/backend/api/auth")
 @Slf4j
 public class AuthController {
 

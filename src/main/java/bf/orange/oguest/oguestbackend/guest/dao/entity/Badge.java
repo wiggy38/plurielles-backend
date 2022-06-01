@@ -25,6 +25,8 @@ public class Badge {
     @Column(nullable = false, unique = true)
     private String numeroBadge;
 
+    private Boolean deleted = false;
+
     @CreationTimestamp
     private Date created;
 

@@ -42,6 +42,8 @@ public class Visitor {
     @Column(nullable = false)
     private Status status = Status.ALLOWED;
 
+    private Boolean deleted = false;
+
     @CreationTimestamp
     private Date created;
 

@@ -57,7 +57,7 @@ public class VisitConverter {
         return visit;
     }
 
-    public List<Visit> toList(List<VisitDto> VisitDtos) {
+    public List<Visit> fromDtoList(List<VisitDto> VisitDtos) {
         List<Visit> Visits = new ArrayList<>();
         for (VisitDto VisitDto:VisitDtos) {
             Visits.add(this.fromDto(VisitDto));

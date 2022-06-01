@@ -27,6 +27,8 @@ public class Location {
     @Column(nullable = false, unique = true)
     private String town;
 
+    private Boolean deleted = false;
+
     @CreationTimestamp
     private Date created;
 
