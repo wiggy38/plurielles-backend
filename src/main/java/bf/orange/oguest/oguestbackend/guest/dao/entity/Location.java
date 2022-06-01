@@ -22,10 +22,10 @@ public class Location {
     private Long id;
 
     @Column(nullable = false, unique = true)
-    public String libelle;
+    private String libelle;
 
     @Column(nullable = false, unique = true)
-    public String town;
+    private String town;
 
     @CreationTimestamp
     private Date created;

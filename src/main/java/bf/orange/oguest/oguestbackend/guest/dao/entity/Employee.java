@@ -31,10 +31,8 @@ public class Employee {
     @Column(nullable = false)
     private String cuid;
 
-    @Column(nullable = false)
     private String email;
 
-    @Column(nullable = false)
     private String phone;
 
     @CreationTimestamp
@@ -49,6 +47,6 @@ public class Employee {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.MERGE)
     @JoinColumn(name = "location_id")
-    private Department location;
+    private Location location;
 
 }

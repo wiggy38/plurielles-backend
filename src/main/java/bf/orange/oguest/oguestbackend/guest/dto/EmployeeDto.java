@@ -1,17 +1,21 @@
 package bf.orange.oguest.oguestbackend.guest.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
 @Data
+@NoArgsConstructor
+@JsonSerialize
 public class EmployeeDto implements Serializable {
-    private final Long id;
-    private final String nom;
-    private final String prenoms;
-    private final String cuid;
-    private final String email;
-    private final String phone;
-    private final DepartmentDto department;
-    private final LocationDto location;
+    private Long id;
+    private String nom;
+    private String prenoms;
+    private String cuid;
+    private String email;
+    private String phone;
+    private DepartmentDto department;
+    private LocationDto location;
 }

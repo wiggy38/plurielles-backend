@@ -23,7 +23,7 @@ public class Department {
     private Long id;
 
     @Column(nullable = false, unique = true)
-    public String libelle;
+    private String libelle;
 
     @CreationTimestamp
     private Date created;

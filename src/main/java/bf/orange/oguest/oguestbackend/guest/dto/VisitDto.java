@@ -1,20 +1,24 @@
 package bf.orange.oguest.oguestbackend.guest.dto;
 
 import bf.orange.oguest.oguestbackend.guest.dao.entity.Visit;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
 @Data
+@NoArgsConstructor
+@JsonSerialize
 public class VisitDto implements Serializable {
-    private final Long id;
-    private final String arrival_time;
-    private final String departure_time;
-    private final String motive;
-    private final String comment;
-    private final Visit.Status status;
-    private final TypeVisitDto type_visit;
-    private final BadgeDto badge;
-    private final VisitorDto visitor;
-    private final EmployeeDto employee;
+    private Long id;
+    private String arrivalTime;
+    private String departureTime;
+    private String motive;
+    private String comment;
+    private Visit.Status status;
+    private TypeVisitDto typeVisit;
+    private BadgeDto badge;
+    private VisitorDto visitor;
+    private EmployeeDto employee;
 }

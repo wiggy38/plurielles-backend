@@ -23,10 +23,10 @@ public class Visit {
     private Long id;
 
     @Column(nullable = false)
-    private String arrival_time;
+    private String arrivalTime;
 
     @Column(nullable = false)
-    private String departure_time;
+    private String departureTime;
 
     @Column(nullable = false)
     private String motive;
@@ -46,7 +46,7 @@ public class Visit {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.MERGE)
     @JoinColumn(name = "type_visit_id")
-    private TypeVisit type_visit;
+    private TypeVisit typeVisit;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.MERGE)
     @JoinColumn(name = "badge_id")

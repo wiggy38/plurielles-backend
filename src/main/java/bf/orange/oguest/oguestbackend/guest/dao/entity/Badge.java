@@ -23,7 +23,7 @@ public class Badge {
     private Long id;
 
     @Column(nullable = false, unique = true)
-    public String numero_badge;
+    private String numeroBadge;
 
     @CreationTimestamp
     private Date created;

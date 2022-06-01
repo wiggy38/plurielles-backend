@@ -30,13 +30,13 @@ public class Visitor {
     private String prenoms;
 
     @Column(nullable = false)
-    private String numero_cnib;
+    private String numeroCnib;
 
     @Column(nullable = false)
-    private String date_validite;
+    private String dateValidite;
 
     @Column(nullable = false)
-    private String type_piece;
+    private String typePiece;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
