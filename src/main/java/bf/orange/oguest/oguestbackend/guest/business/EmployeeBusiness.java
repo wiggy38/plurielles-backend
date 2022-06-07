@@ -29,6 +29,12 @@ public class EmployeeBusiness {
         return employee;
     }
 
+    public List<Employee> searchByNomPrenomsContains(String data) {
+        log.error(">>>>>>>>>> Business >>>> DATA "+data);
+        List<Employee> employees = employeeRepository.searchByNomPrenomsContains(data);
+        return employees;
+    }
+
     public List<Employee> saveAll(List<Employee> employees) {
         List<Employee> employees1 = employeeRepository.saveAll(employees);
         return employees1;

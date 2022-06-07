@@ -2,6 +2,7 @@ package bf.orange.oguest.oguestbackend.guest.business;
 
 import bf.orange.oguest.oguestbackend.guest.dao.entity.Visit;
 import bf.orange.oguest.oguestbackend.guest.dao.repository.VisitRepository;
+import bf.orange.oguest.oguestbackend.guest.payload.request.VisitRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
@@ -16,6 +17,16 @@ public class VisitBusiness {
 
     @Autowired
     VisitRepository visitRepository;
+    @Autowired
+    EmployeeBusiness employeeBusiness;
+    @Autowired
+    LocationBusiness locationBusiness;
+    @Autowired
+    VisitorBusiness visitorBusiness;
+    @Autowired
+    TypeVisitBusiness typeVisitBusiness;
+    @Autowired
+    BadgeBusiness badgeBusiness;
 
     public List<Visit> findAll() {
         List<Visit> visits = visitRepository.findAll();

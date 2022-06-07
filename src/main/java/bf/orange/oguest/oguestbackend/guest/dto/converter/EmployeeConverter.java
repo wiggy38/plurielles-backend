@@ -1,9 +1,12 @@
 package bf.orange.oguest.oguestbackend.guest.dto.converter;
 
+import bf.orange.oguest.oguestbackend.guest.business.DepartmentBusiness;
+import bf.orange.oguest.oguestbackend.guest.business.LocationBusiness;
 import bf.orange.oguest.oguestbackend.guest.dao.entity.Employee;
 import bf.orange.oguest.oguestbackend.guest.dao.repository.EmployeeRepository;
 import bf.orange.oguest.oguestbackend.guest.dao.repository.EmployeeRepository;
 import bf.orange.oguest.oguestbackend.guest.dto.EmployeeDto;
+import bf.orange.oguest.oguestbackend.guest.payload.request.EmployeeRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +22,10 @@ public class EmployeeConverter {
     DepartmentConverter departmentConverter;
     @Autowired
     LocationConverter locationConverter;
+    @Autowired
+    DepartmentBusiness departmentBusiness;
+    @Autowired
+    LocationBusiness locationBusiness;
 
     public EmployeeDto toDto(Employee employee) {
         EmployeeDto employeeDto = new EmployeeDto();
@@ -61,6 +68,27 @@ public class EmployeeConverter {
             Employees.add(this.fromDto(EmployeeDto));
         }
         return Employees;
+    }
+
+    public Employee fromRequest(EmployeeRequest employeeRequest) {
+        Employee employee = new Employee();
+        employee.setId(employeeRequest.getId());
+        employee.setCuid(employeeRequest.getCuid());
+        employee.setNom(employeeRequest.getNom());
+        employee.setPrenoms(employeeRequest.getPrenoms());
+        employee.setEmail(employeeRequest.getEmail());
+        employee.setPhone(employeeRequest.getPhone());
+        employee.setDepartment(departmentBusiness.findById(employeeRequest.getDepartmentId()));
+        employee.setLocation(locationBusiness.findById(employeeRequest.getLocationId()));
+        return employee;
+    }
+
+    public List<Employee> fromRequestList(List<EmployeeRequest> employeeRequests) {
+        List<Employee> employees = new ArrayList<>();
+        for (EmployeeRequest employeeRequest:employeeRequests) {
+            employees.add(this.fromRequest(employeeRequest));
+        }
+        return employees;
     }
 
 }

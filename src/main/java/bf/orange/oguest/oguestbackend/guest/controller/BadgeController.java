@@ -2,8 +2,10 @@ package bf.orange.oguest.oguestbackend.guest.controller;
 
 import bf.orange.oguest.oguestbackend.guest.business.BadgeBusiness;
 import bf.orange.oguest.oguestbackend.guest.dao.entity.Badge;
+import bf.orange.oguest.oguestbackend.guest.dao.entity.Visit;
 import bf.orange.oguest.oguestbackend.guest.dto.BadgeDto;
 import bf.orange.oguest.oguestbackend.guest.dto.converter.BadgeConverter;
+import bf.orange.oguest.oguestbackend.guest.payload.request.BadgeRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,15 +31,16 @@ public class BadgeController {
     }
 
     @PutMapping("/w/update/{id}")
-    public ResponseEntity<List<BadgeDto>> update(@RequestBody BadgeDto badgeDto) {
-        List<Badge> badges = List.of(badgeConverter.fromDto(badgeDto));
+    public ResponseEntity<List<BadgeDto>> update(@RequestBody BadgeRequest badgeRequest) {
+        Badge badge = badgeConverter.fromRequest(badgeRequest);
+        List<Badge> badges = List.of(badge);
         List<Badge> savedBadges = badgeBusiness.saveAll(badges);
         return ResponseEntity.ok().body(badgeConverter.toDtoList(savedBadges));
     }
 
     @PostMapping("/w/insert/new")
-    public ResponseEntity<List<BadgeDto>> create(@RequestBody List<BadgeDto> badgeDtos) throws Exception {
-        List<Badge> badges = new ArrayList<Badge>(badgeConverter.fromDtoList(badgeDtos));
+    public ResponseEntity<List<BadgeDto>> create(@RequestBody List<BadgeRequest> badgeRequests) throws Exception {
+        List<Badge> badges = new ArrayList<Badge>(badgeConverter.fromRequestList(badgeRequests));
         List<Badge> savedBadges = badgeBusiness.saveAll(badges);
         if(savedBadges == null) {
             throw new Exception("Une erreur s'est produite. Veuillez réessayer plus tard.");

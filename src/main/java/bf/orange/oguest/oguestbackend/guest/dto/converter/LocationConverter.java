@@ -36,6 +36,7 @@ public class LocationConverter {
         location.setId(locationDto.getId());
         location.setLibelle(locationDto.getLibelle());
         location.setTown(locationDto.getTown());
+        location.setDeleted(false);
         return location;
     }
 

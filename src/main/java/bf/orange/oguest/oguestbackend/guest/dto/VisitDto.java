@@ -6,12 +6,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 @Data
 @NoArgsConstructor
 @JsonSerialize
 public class VisitDto implements Serializable {
     private Long id;
+    private Date arrivalDate;
     private String arrivalTime;
     private String departureTime;
     private String motive;

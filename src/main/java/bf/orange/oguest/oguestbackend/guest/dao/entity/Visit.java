@@ -23,6 +23,9 @@ public class Visit {
     private Long id;
 
     @Column(nullable = false)
+    private Date arrivalDate;
+
+    @Column(nullable = false)
     private String arrivalTime;
 
     @Column(nullable = false)

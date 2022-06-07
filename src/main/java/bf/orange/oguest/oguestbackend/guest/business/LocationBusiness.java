@@ -28,6 +28,9 @@ public class LocationBusiness {
     }
 
     public List<Location> saveAll(List<Location> locations) {
+        for (Location location: locations) {
+            location.setDeleted(false);
+        }
         List<Location> locations1 = locationRepository.saveAll(locations);
         return locations1;
     }

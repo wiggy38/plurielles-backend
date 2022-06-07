@@ -2,6 +2,7 @@ package bf.orange.oguest.oguestbackend.auth.controller;
 
 import bf.orange.oguest.oguestbackend.auth.entity.User;
 import bf.orange.oguest.oguestbackend.auth.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/backend/api/user")
+@Slf4j
 public class userController {
 
     @Autowired

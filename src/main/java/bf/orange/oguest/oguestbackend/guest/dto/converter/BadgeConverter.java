@@ -1,8 +1,10 @@
 package bf.orange.oguest.oguestbackend.guest.dto.converter;
 
+import bf.orange.oguest.oguestbackend.guest.business.DepartmentBusiness;
 import bf.orange.oguest.oguestbackend.guest.dao.entity.Badge;
 import bf.orange.oguest.oguestbackend.guest.dao.repository.BadgeRepository;
 import bf.orange.oguest.oguestbackend.guest.dto.BadgeDto;
+import bf.orange.oguest.oguestbackend.guest.payload.request.BadgeRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +18,8 @@ public class BadgeConverter {
     BadgeRepository badgeRepository;
     @Autowired
     DepartmentConverter departmentConverter;
+    @Autowired
+    DepartmentBusiness departmentBusiness;
 
     public BadgeDto toDto(Badge badge) {
         BadgeDto badgeDto = new BadgeDto();
@@ -45,6 +49,22 @@ public class BadgeConverter {
         List<Badge> badges = new ArrayList<>();
         for (BadgeDto badgeDto:badgeDtos) {
             badges.add(this.fromDto(badgeDto));
+        }
+        return badges;
+    }
+
+    public Badge fromRequest(BadgeRequest badgeRequest) {
+        Badge badge = new Badge();
+        badge.setId(badgeRequest.getId());
+        badge.setNumeroBadge(badgeRequest.getNumeroBadge());
+        badge.setDepartment(departmentBusiness.findById(badgeRequest.getDepartmentId()));
+        return badge;
+    }
+
+    public List<Badge> fromRequestList(List<BadgeRequest> badgeRequests) {
+        List<Badge> badges = new ArrayList<>();
+        for (BadgeRequest badgeRequest:badgeRequests) {
+            badges.add(this.fromRequest(badgeRequest));
         }
         return badges;
     }

@@ -31,7 +31,7 @@ public class LocationController {
     }
 
     @PutMapping("/w/update/{id}")
-    public ResponseEntity<List<LocationDto>> update(@RequestBody LocationDto locationDto) {
+    public ResponseEntity<List<LocationDto>> update(@RequestBody @Valid LocationDto locationDto) {
         List<Location> locations = List.of(locationConverter.fromDto(locationDto));
         List<Location> savedLocations = locationBusiness.saveAll(locations);
         return ResponseEntity.ok().body(locationConverter.toDtoList(savedLocations));

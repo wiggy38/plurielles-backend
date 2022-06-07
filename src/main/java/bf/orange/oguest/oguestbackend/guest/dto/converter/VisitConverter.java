@@ -1,8 +1,10 @@
 package bf.orange.oguest.oguestbackend.guest.dto.converter;
 
+import bf.orange.oguest.oguestbackend.guest.business.*;
 import bf.orange.oguest.oguestbackend.guest.dao.entity.Visit;
 import bf.orange.oguest.oguestbackend.guest.dao.repository.VisitRepository;
 import bf.orange.oguest.oguestbackend.guest.dto.VisitDto;
+import bf.orange.oguest.oguestbackend.guest.payload.request.VisitRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -20,6 +22,20 @@ public class VisitConverter {
     VisitorConverter visitorConverter;
     @Autowired
     TypeVisitConverter typeVisitConverter;
+    @Autowired
+    EmployeeBusiness employeeBusiness;
+    @Autowired
+    VisitorBusiness visitorBusiness;
+    @Autowired
+    TypeVisitBusiness typeVisitBusiness;
+    @Autowired
+    BadgeBusiness badgeBusiness;
+
+    Visit setNew() {
+        Visit visit = new Visit();
+        visit.setDeleted(false);
+        return visit;
+    }
 
     public VisitDto toDto(Visit visit) {
         VisitDto visitDto = new VisitDto();
@@ -44,7 +60,7 @@ public class VisitConverter {
     }
 
     public Visit fromDto(VisitDto visitDto) {
-        Visit visit = new Visit();
+        Visit visit = this.setNew();
         visit.setId(visitDto.getId());
         visit.setArrivalTime(visitDto.getArrivalTime());
         visit.setDepartureTime(visitDto.getDepartureTime());
@@ -63,6 +79,23 @@ public class VisitConverter {
             Visits.add(this.fromDto(VisitDto));
         }
         return Visits;
+    }
+
+    public Visit fromRequest(VisitRequest visitRequest) {
+        Visit visit = this.setNew();
+        visit.setId(visitRequest.getId());
+        visit.setEmployee(employeeBusiness.findById(visitRequest.getEmployeeId()));
+        visit.setVisitor(visitorBusiness.findById(visitRequest.getVisitorId()));
+        visit.setTypeVisit(typeVisitBusiness.findById(visitRequest.getTypeVisitId()));
+        visit.setBadge(badgeBusiness.findById(visitRequest.getBadgeId()));
+        visit.setComment(visitRequest.getComment());
+        visit.setArrivalDate(visitRequest.getArrivalDate());
+        visit.setArrivalTime(visitRequest.getArrivalTime());
+        visit.setDepartureTime(visitRequest.getDepartureTime());
+        visit.setMotive(visitRequest.getMotive());
+        visit.setStatus(Visit.Status.valueOf(visitRequest.getStatus()));
+        visit.setDeleted(false);
+        return visit;
     }
 
 }
