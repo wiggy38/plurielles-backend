@@ -78,7 +78,7 @@ public class SecurityConfig {
                     .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                     .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                     .authorizeRequests()
-                    .antMatchers("/swagger-ui/**", "/v3/api-docs/**", "/javainuse-openapi/**",  "/backend/api/auth/ldap/**", "/backend/api/user/list/**").permitAll()
+                    .antMatchers("/api/member/r/list/all","/api/member/w/insert/new","/swagger-ui/**", "/v3/api-docs/**", "/javainuse-openapi/**",  "/backend/api/auth/ldap/**", "/backend/api/user/list/**").permitAll()
                     //.antMatchers("/backend/test/**", "/backend/auth/account/**", "/swagger-ui/**", "/v3/api-docs/**", "/javainuse-openapi/**").permitAll()
                     .antMatchers("/ldap/search/cuid/**").hasAnyAuthority("SUPERADMIN")
                     //.antMatchers("/api/users/**").hasRole(roleService.findAdminRole().getSlug())

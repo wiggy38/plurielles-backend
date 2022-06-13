@@ -9,6 +9,14 @@ INSERT INTO `roles` (`id`, `defaut`, `nom`, `slug`) VALUES
                                                         (4, b'0', 'Manager', 'MANAGER'),
                                                         (5, b'0', 'Membre du comité', 'COMITEE');
 
+INSERT INTO `formula` (`id`, `created`, `deleted`, `libelle`, `slug`, `updated`) VALUES
+                                                                                      (NULL, NULL, NULL, 'Premium', 'PREMIUM', NULL),
+                                                                                      (NULL, NULL, NULL, 'Freemium', 'Freemium', NULL);
+
+INSERT INTO `category` (`id`, `created`, `deleted`, `libelle`, `updated`) VALUES
+                                                                                   (NULL, NULL, NULL, 'Membre', NULL),
+                                                                                   (NULL, NULL, NULL, 'Partenaire', NULL);
+
 --
 -- Déchargement des données de la table `user`
 --
