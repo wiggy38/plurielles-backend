@@ -18,7 +18,7 @@ public class CategoryConverter {
     public CategoryDto toDto(Category dep) {
         CategoryDto depDto = new CategoryDto();
         depDto.setId(dep.getId());
-        depDto.setLibelle(dep.getLibelle());
+        depDto.setLabel(dep.getLibelle());
         return depDto;
     }
 
@@ -33,7 +33,7 @@ public class CategoryConverter {
     public Category fromDto(CategoryDto depDto) {
         Category dep = new Category();
         dep.setId(depDto.getId());
-        dep.setLibelle(depDto.getLibelle());
+        dep.setLibelle(depDto.getLabel());
         return dep;
     }
 

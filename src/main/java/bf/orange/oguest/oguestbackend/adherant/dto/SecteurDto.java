@@ -11,5 +11,5 @@ import java.io.Serializable;
 @JsonSerialize
 public class SecteurDto implements Serializable {
     private Long id;
-    private String libelle;
+    private String label;
 }

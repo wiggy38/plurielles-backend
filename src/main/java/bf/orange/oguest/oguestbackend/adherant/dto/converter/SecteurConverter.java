@@ -17,7 +17,7 @@ public class SecteurConverter {
     public SecteurDto toDto(Secteur secteur) {
         SecteurDto secteurDto = new SecteurDto();
         secteurDto.setId(secteur.getId());
-        secteurDto.setLibelle(secteur.getLibelle());
+        secteurDto.setLabel(secteur.getLibelle());
         return secteurDto;
     }
 
@@ -32,7 +32,7 @@ public class SecteurConverter {
     public Secteur fromDto(SecteurDto secteurDto) {
         Secteur secteur = new Secteur();
         secteur.setId(secteurDto.getId());
-        secteur.setLibelle(secteurDto.getLibelle());
+        secteur.setLibelle(secteurDto.getLabel());
         return secteur;
     }
 

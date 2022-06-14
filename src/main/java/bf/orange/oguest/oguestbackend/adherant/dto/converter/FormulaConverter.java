@@ -23,7 +23,7 @@ public class FormulaConverter {
     public FormulaDto toDto(Formula formula) {
         FormulaDto formulaDto = new FormulaDto();
         formulaDto.setId(formula.getId());
-        formulaDto.setNumeroBadge(formula.getLibelle());
+        formulaDto.setLabel(formula.getLibelle());
         formulaDto.setSlug(formula.getSlug());
         return formulaDto;
     }

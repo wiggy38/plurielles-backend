@@ -11,7 +11,7 @@ import java.io.Serializable;
 @JsonSerialize
 public class FormulaDto implements Serializable {
     private Long id;
-    private String numeroBadge;
+    private String label;
     private String slug;
     private CategoryDto department;
 }
