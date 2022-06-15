@@ -5,9 +5,8 @@
 INSERT INTO roles (defaut, nom, slug) VALUES
                                                         (false , 'Super Admin', 'SUPERADMIN'),
                                                         (false, 'Administrateur', 'ADMIN'),
-                                                        (true, 'Candidat', 'CANDIDATE'),
-                                                        (false, 'Manager', 'MANAGER'),
-                                                        (false, 'Membre du comité', 'COMITEE');
+                                                        (true, 'Manager', 'MANAGER'),
+                                                        (false, 'Agent', 'AGENT');
 
 INSERT INTO formula ( created, deleted, libelle, slug, updated) VALUES
                                                                                       ( NULL, NULL, 'Premium', 'PREMIUM', NULL),
