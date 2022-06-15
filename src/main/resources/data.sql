@@ -2,12 +2,12 @@
 -- Déchargement des données de la table roles
 --
 
-INSERT INTO roles (id, defaut, nom, slug) VALUES
-                                                        (1, false , 'Super Admin', 'SUPERADMIN'),
-                                                        (, false, 'Administrateur', 'ADMIN'),
-                                                        (3, true, 'Candidat', 'CANDIDATE'),
-                                                        (4, false, 'Manager', 'MANAGER'),
-                                                        (5, false, 'Membre du comité', 'COMITEE');
+INSERT INTO roles (defaut, nom, slug) VALUES
+                                                        (false , 'Super Admin', 'SUPERADMIN'),
+                                                        (false, 'Administrateur', 'ADMIN'),
+                                                        (true, 'Candidat', 'CANDIDATE'),
+                                                        (false, 'Manager', 'MANAGER'),
+                                                        (false, 'Membre du comité', 'COMITEE');
 
 INSERT INTO formula ( created, deleted, libelle, slug, updated) VALUES
                                                                                       ( NULL, NULL, 'Premium', 'PREMIUM', NULL),
