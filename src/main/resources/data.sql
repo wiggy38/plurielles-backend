@@ -25,7 +25,7 @@
 --
 
 -- INSERT INTO users (id, active, activetoken, displayname, email, nom, password, phone, prenoms, username) VALUES
-    (1, true, NULL, 'John DOE', 'miguel.lao@orange.com', 'DOE', '$2a$10$PM5nq1iZ.iFm7VSGlf2A2O3Y7rtUQKuI5TLU6a4xCbWbgu2BHhRFu', '74707070', 'John', 'HRVN5598');
+--    (1, true, NULL, 'John DOE', 'miguel.lao@orange.com', 'DOE', '$2a$10$PM5nq1iZ.iFm7VSGlf2A2O3Y7rtUQKuI5TLU6a4xCbWbgu2BHhRFu', '74707070', 'John', 'HRVN5598');
 
 -- --
 -- -- Déchargement des données de la table user_role
