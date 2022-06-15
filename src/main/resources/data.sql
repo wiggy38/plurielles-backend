@@ -2,24 +2,24 @@
 -- Déchargement des données de la table roles
 --
 
-INSERT INTO roles (id, defaut, nom, slug) VALUES
-                                                        (1, false , 'Super Admin', 'SUPERADMIN'),
-                                                        (2, false, 'Administrateur', 'ADMIN'),
-                                                        (3, true, 'Candidat', 'CANDIDATE'),
-                                                        (4, false, 'Manager', 'MANAGER'),
-                                                        (5, false, 'Membre du comité', 'COMITEE');
+-- INSERT INTO roles (id, defaut, nom, slug) VALUES
+--                                                         (1, false , 'Super Admin', 'SUPERADMIN'),
+--                                                         (, false, 'Administrateur', 'ADMIN'),
+--                                                         (3, true, 'Candidat', 'CANDIDATE'),
+--                                                         (4, false, 'Manager', 'MANAGER'),
+--                                                         (5, false, 'Membre du comité', 'COMITEE');
 
-INSERT INTO formula ( created, deleted, libelle, slug, updated) VALUES
-                                                                                      ( NULL, NULL, 'Premium', 'PREMIUM', NULL),
-                                                                                      ( NULL, NULL, 'Freemium', 'Freemium', NULL);
+-- INSERT INTO formula ( created, deleted, libelle, slug, updated) VALUES
+--                                                                                       ( NULL, NULL, 'Premium', 'PREMIUM', NULL),
+--                                                                                       ( NULL, NULL, 'Freemium', 'Freemium', NULL);
 
-INSERT INTO category ( created, deleted, libelle, updated) VALUES
-                                                                                   ( NULL, NULL, 'Membre', NULL),
-                                                                                   ( NULL, NULL, 'Partenaire', NULL);
+-- INSERT INTO category ( created, deleted, libelle, updated) VALUES
+--                                                                                    ( NULL, NULL, 'Membre', NULL),
+--                                                                                    ( NULL, NULL, 'Partenaire', NULL);
 
-INSERT INTO secteur ( created, deleted, libelle, updated) VALUES
-                                                                                ( NULL, false , 'Informatique', NULL),
-                                                                                (NULL, false , 'Commerce', NULL);
+-- INSERT INTO secteur ( created, deleted, libelle, updated) VALUES
+--                                                                                 ( NULL, false , 'Informatique', NULL),
+--                                                                                 (NULL, false , 'Commerce', NULL);
 --
 -- Déchargement des données de la table user
 --
